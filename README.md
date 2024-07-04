@@ -1,5 +1,5 @@
 # NinjaOne TestCafé Challenge
-API QA challenge Exercise NinjaOne
+E2E QA challenge Exercise NinjaOne
 
 ## Prerequisites
 Describe the versions of the dependencies, packages.

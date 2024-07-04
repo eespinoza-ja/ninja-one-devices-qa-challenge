@@ -3,15 +3,15 @@ import { t } from "testcafe";
 const config = require("../../utils/config");
 
 /**
- * getDevices function Makes an API call to retrieve the list of devices
- * @returns {Object} response - list of devices
+ * deleteDevice function Makes an API call that deletes a device
+ * @param {String} id - device id to be deleted
  */
-export const getDevices = async () => {
-	const endpoint = `${config.baseApiUrl}/devices`;
+export const deleteDevice = async (id) => {
+	const endpoint = `${config.baseApiUrl}/devices/${id}`;
 	try {
-		const response = await axios.get(endpoint);
+		const response = await axios.delete(endpoint);
 		if (response.status === 200) {
-			return response.data;
+			console.log(`Deleted device with ID: ${id}`);
 		} else {
 			throw new Error(`Request failed with status ${response.status}`);
 		}
@@ -20,4 +20,4 @@ export const getDevices = async () => {
 		await t.expect(false).ok(`Error fetching data: ${error.message}`);
 		throw error;
 	}
-};
+}

@@ -2,7 +2,7 @@ const { Selector, t } = require("testcafe");
 const config = require("../../utils/config");
 
 // Selectors
-const deviceSpan = Selector("span");
+const deviceSpan = Selector("span.device-name");
 const editButton = "a.device-edit";
 const removeButton = "button.device-remove";
 
@@ -15,9 +15,11 @@ export async function validateDevices(devices) {
 	await t.wait(parseInt(config.waitTime));
 	for (const device of devices) {
 		const deviceName = deviceSpan.withText(device.system_name);
-		const deviceType = deviceName.sibling("span").withText(device.type);
+		const deviceType = deviceName
+			.sibling("span.device-type")
+			.withText(device.type);
 		const deviceCapacity = deviceName
-			.sibling("span")
+			.sibling("span.device-capacity")
 			.withText(device.hdd_capacity);
 		const deviceOptions = deviceName
 			.parent("div.device-info")
