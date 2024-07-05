@@ -4,7 +4,9 @@
     "description": "A project to resolve E2E challenge using TestCafé",
     "main": "index.js",
     "scripts": {
-        "tests": "testcafe chrome ./tests/tests.test.js"
+        "tests": "testcafe chrome ./tests/tests.test.js --reporter allure",
+        "generate:report": "allure generate ./allure/allure-results --clean -o ./allure/allure-report",
+        "open:report": "allure serve ./allure/allure-results"
     },
     "author": "Sebastián Espinoza",
     "license": "MIT",
@@ -12,6 +14,7 @@
         "axios": "^1.7.2",
         "dotenv": "^16.4.5",
         "prettier": "^3.3.2",
-        "testcafe": "^3.6.2"
+        "testcafe": "^3.6.2",
+        "testcafe-reporter-allure": "^1.0.5"
     }
 }
