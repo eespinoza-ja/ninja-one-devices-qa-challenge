@@ -10,8 +10,11 @@ E2E QA challenge Exercise NinjaOne
    cd ninja-one-devices-qa-challenge
    ```
 2. Versions of the dependencies, packages.:
-   - Node (Version 17.x or Upper)
-   - NPM (Version 8.x or Upper)
+
+   - [Node.js](https://nodejs.org/) installed (Version 17.x or above)
+   - [npm](https://www.npmjs.com/get-npm) installed (Version 8.x or above)
+   - [Java](https://www.java.com/en/download/) installed (Version 8.x or above, required for Allure Commandline)
+
 3. Environment configuration:
    - Run the server in the development mode (clone the repository: https://github.com/NinjaRMM/devicesTask_serverApp)
    - Run the app in the development mode (clone the repository: https://github.com/Yastrenky/devices-clientapp)
