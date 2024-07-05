@@ -11,6 +11,7 @@ export const getDevices = async () => {
 	try {
 		const response = await axios.get(endpoint);
 		if (response.status === 200) {
+			await t.expect(response.data.length).gt(0, "The list must not be empty");
 			return response.data;
 		} else {
 			throw new Error(`Request failed with status ${response.status}`);
