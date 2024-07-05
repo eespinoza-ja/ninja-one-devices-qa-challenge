@@ -1,4 +1,4 @@
-import devicesPage from "./devices.page";
+import DevicesPage from "./devices.page";
 import { deleteDevice } from "../api/delete.endpoints";
 
 /**
@@ -7,10 +7,10 @@ import { deleteDevice } from "../api/delete.endpoints";
  */
 export async function validateDeviceDeleted(t, device) {
 	await deleteDevice(device.id);
-	await devicesPage.validateDeviceRemoved(
-		t,
+	const devicesPage = new DevicesPage(
 		device.system_name,
 		device.type,
 		device.hdd_capacity,
 	);
+	await devicesPage.validateDeviceRemoved();
 }

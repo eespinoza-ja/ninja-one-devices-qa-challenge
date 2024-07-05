@@ -10,15 +10,13 @@ export const getDevices = async () => {
 	const endpoint = `${config.baseApiUrl}/devices`;
 	try {
 		const response = await axios.get(endpoint);
-		if (response.status === 200) {
-			await t.expect(response.data.length).gt(0, "The list must not be empty");
-			return response.data;
-		} else {
-			throw new Error(`Request failed with status ${response.status}`);
-		}
+		await t.expect(response.status).eql(200, "Status code should be 200");
+		await t
+			.expect(response.data.length)
+			.gt(0, "Devices list should not be empty");
+		return response.data;
 	} catch (error) {
 		console.error(error);
-		await t.expect(false).ok(`Error fetching data: ${error.message}`);
 		throw error;
 	}
 };

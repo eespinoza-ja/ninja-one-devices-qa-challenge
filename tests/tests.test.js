@@ -18,8 +18,7 @@ test("Test 1", async (t) => {
 });
 
 test("Test 3", async (t) => {
-	const deviceNewName = "Renamed Device";
-	await validateDeviceRenamed(t, devices[0], deviceNewName);
+	await validateDeviceRenamed(t, devices[0], "Renamed Device");
 });
 
 test("Test 4", async (t) => {

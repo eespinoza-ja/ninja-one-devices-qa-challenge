@@ -17,7 +17,6 @@ export const deleteDevice = async (id) => {
 		}
 	} catch (error) {
 		console.error(error);
-		await t.expect(false).ok(`Error fetching data: ${error.message}`);
 		throw error;
 	}
 }

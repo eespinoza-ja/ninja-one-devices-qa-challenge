@@ -9,7 +9,7 @@ E2E QA challenge Exercise NinjaOne
    git clone https://github.com/eespinoza-ja/ninja-one-devices-qa-challenge.git
    cd ninja-one-devices-qa-challenge
    ```
-2. Versions of the dependencies, packages.:
+2. Versions of the dependencies, packages:
 
    - [Node.js](https://nodejs.org/) installed (Version 17.x or above)
    - [npm](https://www.npmjs.com/get-npm) installed (Version 8.x or above)

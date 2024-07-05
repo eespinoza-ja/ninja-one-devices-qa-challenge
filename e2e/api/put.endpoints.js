@@ -18,7 +18,6 @@ export const updateDevice = async (id, data) => {
 		}
 	} catch (error) {
 		console.error(error);
-		await t.expect(false).ok(`Error fetching data: ${error.message}`);
 		throw error;
 	}
 };
