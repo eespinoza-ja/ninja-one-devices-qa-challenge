@@ -7,6 +7,11 @@ import { updateDevice } from "../api/put.endpoints";
  * @param {String} deviceNewName - Name to validate
  */
 export async function validateDeviceRenamed(t, device, deviceNewName) {
+	const devicesPage = new DevicesPage(
+		deviceNewName,
+		device.type,
+		device.hdd_capacity,
+	);
 	await updateDevice(device.id, {
 		system_name: deviceNewName,
 		type: device.type,
@@ -15,10 +20,5 @@ export async function validateDeviceRenamed(t, device, deviceNewName) {
 	// Validate the page reloads correctly
 	await devicesPage.validatePageReloadsCorrectly();
 	// Validate the name is updated
-	const devicesPage = new DevicesPage(
-		deviceNewName,
-		device.type,
-		device.hdd_capacity,
-	);
 	await devicesPage.validateDeviceData();
 }

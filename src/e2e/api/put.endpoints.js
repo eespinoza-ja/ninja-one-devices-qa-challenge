@@ -1,5 +1,4 @@
 import axios from "axios";
-import { t } from "testcafe";
 const config = require("../../utils/config");
 
 /**

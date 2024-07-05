@@ -4,7 +4,8 @@
     "description": "A project to resolve E2E challenge using TestCafé",
     "main": "index.js",
     "scripts": {
-        "tests": "testcafe chrome ./tests/tests.test.js --reporter allure",
+        "tests": "testcafe chrome ./src/tests/tests.test.js",
+        "tests:report": "testcafe chrome ./src/tests/tests.test.js --reporter allure",
         "generate:report": "allure generate ./allure/allure-results --clean -o ./allure/allure-report",
         "open:report": "allure serve ./allure/allure-results"
     },

@@ -79,7 +79,7 @@ class DevicesPage {
 	 * Validate Deleted Device function To check device data is not visible in the DOM elements
 	 */
 	async validateDeviceRemoved() {
-		validatePageReloadsCorrectly();
+		this.validatePageReloadsCorrectly();
 		// Validate the device name does not exists
 		await t
 			.expect(this.deviceName.exists)

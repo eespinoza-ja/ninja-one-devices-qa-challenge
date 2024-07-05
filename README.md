@@ -32,9 +32,14 @@ E2E QA challenge Exercise NinjaOne
 Steps to perform in order to run the automated tests.
 
 1. Execute tests:
-   ```bash
-   npm run tests
-   ```
+   - Without report:
+     ```bash
+     npm run tests
+     ```
+   - With Report
+     ```bash
+     npm run tests:report
+     ```
 2. Generate report:
    ```bash
    npm run generate:report
